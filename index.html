@@ -1,325 +1,133 @@
 <!DOCTYPE html>
-<html lang="en" class="sr">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEETS</title>
-    <link rel="icon" type="image/png" href="public/cropped-witlogo-1.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="page.css">
-  </head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WEETS – Women Entrepreneurs and Executives in Tech Summit</title>
+<meta name="description" content="WEETS is the annual summit helping women and girls close the technology gender gap in Nigeria's tech space.">
+<meta name="theme-color" content="#14020b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WEETS – Women Entrepreneurs and Executives in Tech Summit">
+<meta property="og:description" content="AI Leadership: Navigating the Future of Women in Business.">
+<meta property="og:image" content="https://kogectech.github.io/weets/public/wee.png">
+<link rel="icon" type="image/png" href="public/cropped-witlogo-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Oswald:wght@400;600&display=swap">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
 
-  <body>
+<header class="site-header">
+  <a href="#home" class="brand"><img src="public/cropped-witlogo-1.png" alt="" width="44" height="44"><span>WEETS</span></a>
+  <button class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  <nav class="nav" id="site-nav" aria-label="Main">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#objectives">Objectives</a>
+    <a href="#sponsorship">Sponsorship</a>
+    <a href="#contact" class="btn btn-sm">Contact us</a>
+  </nav>
+</header>
 
-    <div id="top"></div>
-
-    <!-- NAVIGATION  -->
-    <a href="#" class="navbar-icon">
-      <img src="public/cropped-witlogo-1.png" alt="women in tech">
-      <span class="icon-text">WEETS </span>
-    </a>
-    
-    <div class="menu-overlay menu-overlay-slide-left" id="menu-overlay">
-      <nav>
-          <a href="#top" class="navbar-link slide-out-1" id="nav-1">
-            <span>HOME</span>
-          </a>
-          
-          <a href="#about" class="navbar-link slide-out-2" id="nav-2">
-            <span>ABOUT WEETS</span>
-          </a>
-          
-          <a href="#gallery" class="navbar-link slide-out-3"id="nav-3" >
-            <span>EVENTS GALLERY</span>
-          </a>
-          
-          <a href="#objectives" class="navbar-link slide-out-4" id="nav-4">
-            <span>OBJECTIVES OF WEETS</span>
-          </a>
-          
-          <a href="#contact" class="navbar-link slide-out-5" id="nav-5">
-            <span>CONTACT US</span>
-          </a>
-      </nav>
+<main>
+  <section id="home" class="hero">
+    <video autoplay muted loop playsinline preload="metadata" id="video-bg" aria-hidden="true">
+      <source src="public/Sequence_18.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <!-- TODO: update the year (and add date + venue) for the current edition -->
+      <h1>WEETS 2024</h1>
+      <p class="sub">Women Entrepreneurs and Executives in Tech Summit</p>
+      <p class="theme">Theme: AI Leadership: Navigating the Future of Women in Business</p>
+      <a class="btn" href="#contact">Attend WEETS</a>
+      <a class="btn btn-ghost" href="#about">Learn more</a>
     </div>
-    
+  </section>
 
-    <div class="menu-bars" id="menu-bars">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About WEETS</h2>
+      <p>WEETS is an annual event that generates new ideas for encouraging women and girls, from the girl-child stage to the corporate woman, to take outstanding roles in closing the technology gender gap.</p>
+      <p>WEETS 2024 is a platform that highlights opportunities for women and girls by bridging the digital divide and expanding new ideas on ICT and telecom, positioning them to play a formidable role in the Nigerian tech space. It also recognizes and celebrates the women and the corporate organizations already blazing the trail in Nigeria's ICT ecosystem.</p>
     </div>
-    <!-- END OF NAVIGATION  -->
+  </section>
 
-    <main>
-      <!-- HERO WELCOME SECTION  -->
-      <section id="home" class="home-section">
-        <div class="video-container" id="videoContainer">
-          <video autoplay muted loop id="video-bg" src="public/Sequence_18.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-                
-        <div class="home-container">
-          <h1 class="welcome">WEETS 2024</h1>
-          <h2 class="welcome-title">Women Entrepreneurs  and Executives In Tech Summit</h2>
-          <h2 class="theme">THEME: Ai LEADERSHIP: NAVIGATING THE FUTURE OF WOMEN IN BUSINESS</h2>
+  <section id="gallery" class="gallery">
+    <div class="wrap">
+      <h2>Events gallery</h2>
+      <div class="track" id="track" tabindex="0" role="region" aria-label="Event photos, scroll sideways">
+        <!-- TODO: replace each alt with a real description of the photo -->
+        <img loading="lazy" src="public/pic6.png" alt="WEETS event photo 1">
+        <img loading="lazy" src="public/pic3.png" alt="WEETS event photo 2">
+        <img loading="lazy" src="public/pic4.png" alt="WEETS event photo 3">
+        <img loading="lazy" src="public/pic2.png" alt="WEETS event photo 4">
+        <img loading="lazy" src="public/pic5.png" alt="WEETS event photo 5">
+        <img loading="lazy" src="public/pic1.png" alt="WEETS event photo 6">
+        <img loading="lazy" src="public/pic7.png" alt="WEETS event photo 7">
+        <img loading="lazy" src="public/pic8.png" alt="WEETS event photo 8">
+        <img loading="lazy" src="public/wee.png" alt="WEETS summit banner">
+      </div>
+      <div class="controls">
+        <button class="arrow" id="prev" aria-label="Previous photos">&#8592;</button>
+        <button class="arrow" id="next" aria-label="Next photos">&#8594;</button>
+      </div>
+    </div>
+  </section>
 
-          <p class="home-cta">
-            <a rel="noreferrer" class="cta-btn cta-btn--home" href="#about">
-              Read More About WEETS
-            </a>
-          </p>
-        </div>
-      </section>
-      <!-- END OF HERO WELCOME SECTION  -->
+  <section id="objectives" class="objectives">
+    <div class="wrap">
+      <h2>The objectives of WEETS 2024</h2>
+      <p>The summit gives women across sectors a dynamic platform to explore the intersection of AI and leadership, share insights, experiences and best practices, and chart a course for gender diversity and inclusion in tech.</p>
+      <p>It features keynote presentations, panel discussions, workshops and networking, covering these topics:</p>
+      <ul class="topics">
+        <li>The role of AI in shaping the future of business leadership and innovation.</li>
+        <li>Strategies for fostering diversity, equity, and inclusion in AI development and implementation.</li>
+        <li>Overcoming challenges and barriers to advancement as women leaders in the tech industry.</li>
+        <li>Leveraging AI technologies for business growth, sustainability, and societal impact.</li>
+        <li>Empowering the next generation of women and girls to excel in AI and technology fields.</li>
+      </ul>
+      <p class="note">We believe live events bring people together, stimulate discussion and debate, and give networking a home. A virtual component extends our reach and engagement.</p>
+    </div>
+  </section>
 
-      <!-- ABOUT SECTION  -->
-      <section id="about">
-        <div class="background-image">
-        <!-- OVERLAY  -->
-          <span id="blackOverlay"></span>
-        </div>
-        <h1>ABOUT WEETS</h1>
-        <div class="about-text-box" id="text-box">
-          <p>The Digital Woman Summit is an ANNUAL event geared towards generating new ideas on how best to encourage the women folk (from the girl-child stage to the corporate woman) in strongly keying into and playing outstanding roles towards closing the technology gender gap.</p>
+  <section id="sponsorship" class="sponsor">
+    <div class="wrap">
+      <h2>Sponsorship</h2>
+      <div class="cols">
+        <p>As a WEETS 2024 sponsor, you will raise brand awareness, engage new clients, and strengthen relationships with current customers. You gain open access to national and multinational institutions committed to the development of women and the girl-child, and recognition for your leadership in equipping women and girls for the digital economy.</p>
+        <p>We offer sponsorship packages and exhibition opportunities to suit your budget. Your support funds a dynamic conference program, highly rated speakers, the 2-day Advanced Digital Skills Boot Camp, and the Tech Summit and Awards.</p>
+      </div>
+      <a class="btn" href="#contact">Become a sponsor</a>
+    </div>
+  </section>
 
-          <p>WEETS 2024 is a platform that seeks to highlight opportunities available for women/girls by bridging the digital divide while expanding new ideas on ICT and telecom, thereby positioning them to effectively play a formidable role in the Nigerian tech space. It will also recognize and celebrate the Women on the one hand and Corporate Organizations on the other hand, who are already blazing the trail in Nigeria’s ICT ecosystem.</p>
-        </div>
-      </section>
-      
-      <!-- END OF ABOUT SECTION  -->
+  <section id="contact" class="contact">
+    <div class="wrap narrow">
+      <h2>Want to attend WEETS?</h2>
+      <p>Send us a message and we will get back to you within 24 hours.</p>
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID (formspree.io) -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+        <label for="full-name">Full name</label>
+        <input id="full-name" name="name" type="text" autocomplete="name" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button class="btn" type="submit">Send message</button>
+        <p id="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
 
-      <!-- EVENTS GALLERY SECTION  -->
-        <div class="gallery-section" id="gallery">
-          <button class="arrow left-arrow" onclick="scrollGallery(-1)">
-            &#8592;
-          </button>
-          <!-- Image Cap & Text Card -->
-          <div class="card">
-            <img
-              src="public/pic6.png"
-              alt="..."
-              class="card-image"
-            />
-            <img
-            src="public/pic3.png"
-            alt="..."
-            class="card-image"
-            />                    
-            <img
-            src="public/pic4.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic2.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic5.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic1.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic7.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic8.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/wee.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic4.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic2.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic5.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic1.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic7.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/pic8.png"
-            alt="..."
-            class="card-image"
-            />
-            <img
-            src="public/wee.png"
-            alt="..."
-            class="card-image"
-            />
-          </div>
+<footer>
+  <div class="wrap">Copyright © 2024 Women Entrepreneurs and Executives Tech Summit. Designed by KHALIF.</div>
+</footer>
 
-          <button class="arrow right-arrow" onclick="scrollGallery(1)">
-            &#8594;
-          </button>
-        </div>
-      <!-- END OF EVENTS GALLERY SECTION  -->
-
-      <!-- OBJECTIVE  SECTION  -->
-      <section id="objectives" class="section-container section-content">
-        <!-- Section Content -->
-                <div class="">
-                  <!-- Text Box -->
-                  <div class="objective-text-box slide-in">
-                    <h2 class="section-title">THE OBJECTIVES OF WEETS 2024</h2>
-                    <p class="section-description">
-                      The primary objectives of the 2024 Women Entrepreneurs & Executives in Tech Summit is to provide a dynamic platform for women across various sectors to explore the intersection of AI and leadership, share insights,experiences, and best practices, and collectively chart a course for advancing gender diversity and inclusion in the tech sector.
-                    </p>
-                    <p> <span>SUMMIT OVERVIEW:</span> <br> The summit will feature a diverse array of keynote presentations, panel discussions,workshops, and networking opportunities, addressing key topics such as: <br><br>
-                      1. The role of AI in shaping the future of business leadership and innovation. <br>
-                      2. Strategies for fostering diversity, equity, and inclusion in AI development and implementation. <br>
-                      3. Overcoming challenges and barriers to advancement as women leaders in the tech industry. <br>
-                      4. Leveraging AI technologies for business growth, sustainability, and societal impact. <br>
-                      5. Empowering the next generation of women and girls to excel in AI and technology fields.</p>
-                  </div>
-              
-                  <!-- Flex Row -->
-                  <div class="flex-row">
-                    <!-- Item 1 -->
-                    <div class="item fade-in">
-                      <p class="item-description">
-                        At WEETS, we believe in the power of live events to bring people together, simulate discussion and debate, and as a forum for networking. The virtual component will help extend the reach and engagement.
-                      </p>
-                    </div>
-              
-                    <!-- Item 2 -->
-                    <div class="item slide-in">
-                      <div class="icon-container">
-                        <i class="fas fa-poll icon"></i>
-                      </div>
-                      <h5 class="item-title">SPONSORSHIP</h5>
-                      <p class="item-description">
-                        As a WEETS 2024 sponsor, you will increase your brand awareness, interact new clients, and enhance your business relationships with current customers. WEETS will also provide huge opportunities for your brand to leverage open access with national and multinational institutions mutually engaged in the development trajectories of women and the girl-child. You will equally earn recognition for your commitment to and leadership in equipping women/girls for the digital economy.
-                      </p>
-                    </div>
-              
-                    <!-- Item 3 -->
-                    <div class="item fade-in">
-                      <p class="item-description">
-                        The WEETS 2024 offers a range of sponsorship packages and exhibition opportunities suitable for your budget. Your partnership in sponsorship support will enable us to organize a briefing and dynamic conference program, host highly-rated conference speakers and set up the 2-day Advanced Digital Skills Boot Camp as well as the Tech Summit/Awards.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-      </section>
-      <!-- END OF OBJECTIVE  SECTION  -->
-
-      <!-- CONTACT  SECTION  -->
-      <section id="contact" class="contact-section">
-        <!-- Container -->
-          <div class="form-wrapper container">
-            <div class="form-container slide-in">
-              <div class="form-content fade-in">
-                <h1 class="form-title">Want to attend WEETS? <br>
-                  <h4><span>Kindly send us a mail via the form below:</span></h4>
-                </h1>
-                <p class="form-description">
-                  we will get back to you within 24 hours.
-                </p>
-              
-                <!-- Name Input -->
-                <div class="form-group fade-in">
-                  <label for="full-name" class="form-label">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="full-name"
-                    class="form-input"
-                    placeholder="Full Name"
-                  />
-                </div>
-              
-                <!-- Email Input -->
-                <div class="form-group fade-in">
-                  <label for="email" class="form-label">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    class="form-input"
-                    placeholder="Email"
-                  />
-                </div>
-
-                <!-- SUBJECT INPUT  -->
-                <div class="form-group fade-in">
-                  <label for="subject" class="form-label">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    class="form-input"
-                    placeholder="Subject"
-                    />
-                </div>
-              
-                <!-- Message Input -->
-                <div class="form-group fade-in">
-                  <label for="message" class="form-label">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    class="form-input"
-                    rows="4"
-                    placeholder="Type a message..."
-                    >
-                  </textarea>
-                </div>
-              
-                <!-- Submit Button -->
-                <div class="form-submit fade-in">
-                  <button type="button" class="submit-button">
-                    Send Message
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </section>
-      <!-- END OF CONTACT  SECTION  -->
-    </main>
-        
-    <!-- FOOTER  SECTION  -->
-    <footer>
-      <span>Copyright © 2024 Women Entrepreneurs and Executives Tech Summit – Designed by KHALIF</span>
-    </footer>
-    <!-- END OF FOOTER  SECTION  -->
-
-    <script src="page.js"></script>
-  </body>
-</html> 
+<script src="page.js"></script>
+</body>
+</html>
