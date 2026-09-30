@@ -1,67 +1,55 @@
-const menuBars = document.getElementById('menu-bars');
-const menuOverlay = document.getElementById('menu-overlay');
-const nav1 = document.getElementById('nav-1');
-const nav2 = document.getElementById('nav-2');
-const nav3 = document.getElementById('nav-3');
-const nav4 = document.getElementById('nav-4');
-const nav5 = document.getElementById('nav-5');
-const navItems = [nav1, nav2, nav3, nav4, nav5];
+document.documentElement.classList.add('js');
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function toggleNav() {
-  // Toggle: Menu Bars Open/Closed
-  menuBars.classList.toggle('change');
-  // Toggle: Menu Active
-  menuOverlay.classList.toggle('menu-overlay-active');
-  if (menuOverlay.classList.contains('menu-overlay-active')) {
-    // Animate In - Overlay
-    menuOverlay.classList.replace('menu-overlay-slide-left', 'menu-overlay-slide-right');
-    // Animate In - Nav Items
-    navAnimation('out', 'in');
-  } else {
-    // Animate Out - Overlay
-    menuOverlay.classList.replace('menu-overlay-slide-right', 'menu-overlay-slide-left');
-    // Animate Out - Nav Items
-    navAnimation('in', 'out');
+// Mobile menu
+const menuBtn = document.getElementById('menu-btn');
+const nav = document.getElementById('site-nav');
+function setMenu(open) {
+  menuBtn.setAttribute('aria-expanded', open);
+  nav.classList.toggle('open', open);
+}
+menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+// Gallery arrows
+const track = document.getElementById('track');
+const scrollGallery = dir => track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: reduce ? 'auto' : 'smooth' });
+document.getElementById('prev').addEventListener('click', () => scrollGallery(-1));
+document.getElementById('next').addEventListener('click', () => scrollGallery(1));
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.wrap > h2, .topics li, .cols p, form');
+revealEls.forEach(el => el.classList.add('reveal'));
+if ('IntersectionObserver' in window && !reduce) {
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+// Respect reduced motion for the hero video
+const video = document.getElementById('video-bg');
+if (reduce && video) video.removeAttribute('autoplay'), video.pause();
+
+// Contact form
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = form.querySelector('button');
+  btn.disabled = true;
+  status.textContent = 'Sending…';
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (!res.ok) throw new Error();
+    form.reset();
+    status.textContent = 'Message sent. We will reply within 24 hours.';
+  } catch {
+    status.textContent = 'Message not sent. Check your connection and try again.';
+  } finally {
+    btn.disabled = false;
   }
-}
-
-// Control Navigation Animation
-function navAnimation(direction1, direction2) {
-  navItems.forEach((nav, i) => {
-    nav.classList.replace(`slide-${direction1}-${i + 1}`, `slide-${direction2}-${i + 1}`);
-  });
-}
-
-menuBars.addEventListener('click', toggleNav);
-navItems.forEach((nav) => {
-  nav.addEventListener('click', toggleNav);
 });
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const animatedElements = document.querySelectorAll(".slide-in, .fade-in");
-
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = "running";
-          observer.unobserve(entry.target); // Stop observing after animation
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  animatedElements.forEach((element) => {
-    element.style.animationPlayState = "paused"; // Initially pause animation
-    observer.observe(element);
-  });
-});
-
-function scrollGallery(direction) {
-  const gallery = document.querySelector(".card");
-  const scrollAmount = gallery.clientWidth; // Scroll by one gallery width
-  gallery.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-}
